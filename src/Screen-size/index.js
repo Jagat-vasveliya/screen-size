@@ -9,18 +9,18 @@ export default function Screen() {
 			height,
 		};
 	};
-     
+
 	const [windowDimensions, setWindowDimensions] = useState(
 		getWindowDimesions()
 	);
 
 	useEffect(() => {
-		const resize = () => {
+		const resizeWindowDimensions = () => {
 			setWindowDimensions(getWindowDimesions());
 		};
-		window.addEventListener("resize", resize);
+		window.addEventListener("resize", resizeWindowDimensions);
 		return () => {
-			window.removeEventListener("resize", resize);
+			window.removeEventListener("resize", resizeWindowDimensions);
 		};
 	}, []);
 
